@@ -5,6 +5,8 @@ This is mean to update pihole group to enable/disable when running on a docker c
 
 The script only updates database if current value is different from the parameter, this allow the script to return the affected rows that could be used for expanded automation.
 
-Usage: pihole-group <enable|disable> <groupname>
+Set the script to executable: <code>chmod +x pihole-group.sh</code>
+
+Usage: pihole-group.sh <enable|disable> <groupname>
 
 Depending on docker container setup you might require to change the pihole and database variables to point the right place.
