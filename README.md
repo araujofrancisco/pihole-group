@@ -8,7 +8,8 @@ Update the database only if current value is different from the parameter, this 
 Set the script to executable: chmod +x pihole-group.sh
 
 <h3>Usage</h3>
-pihole-group.sh < enable | disable > < group-name >
+<code>pihole-group.sh < enable | disable > < group-name1,group-name2,group-name3 ></code>
+</br>Multiple groups can be updated at once passing as second parameter comma separated list.
 </br>You might require root permissions to execute docker commands.
 
 <h3>Notes</h3>
