@@ -29,5 +29,9 @@ cmd="update 'group' set enabled = $action where name collate nocase in $groups a
 
 # does execute the command on pihole container, container name might differ depending on setup
 # the location for the database might be difference as well
-docker exec $(docker ps | grep -o "$pihole") sqlite3 "$database" "$cmd"
+pihole_container=$(docker ps | grep -o "$pihole")
+#echo $pihole_container
 
+docker exec $pihole_container sqlite3 "$database" "$cmd"
+# after doing changes to the database is required to restart dns
+docker exec $pihole_container pihole restartdns reload-lists
